@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:si_wika/data/fsl_phrases.dart';
 import 'package:si_wika/screens/modules_screen.dart';
+import 'package:si_wika/screens/practice_screen.dart';
 import 'package:si_wika/utils/streak_manager.dart';
 import 'quiz_screen.dart';
 import 'flashcard_screen.dart';
@@ -111,6 +112,22 @@ class DashboardScreen extends StatelessWidget {
                     cards: FslPhrases.phrases, // 2. Pass the phrases list
                     moduleId: 'fsl_phrases', // 3. Pass the phrases ID
                   ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 20),
+
+            _DuoDashboardCard(
+              title: "PRACTICE",
+              subtitle: "Practice your gestures",
+              icon: Icons.front_hand_rounded,
+              color: const Color(0xFFFF9600), // Duo Orange
+              shadowColor: const Color(0xFFE88900),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const PracticeGesturesScreen(),
                 ),
               ),
             ),
